@@ -6,5 +6,21 @@ class Turn {
     this.card = new Card(id, question, answers, correctAnswer);
   }
 
+  returnGuess() => {
+    
+  }
+
+  returnCard() => {
+
+  }
+
+  evaluateGuess() => {
+
+  }
+
+  giveFeedBack() => {
+
+  }
+
 }
 module.exports = Turn;
