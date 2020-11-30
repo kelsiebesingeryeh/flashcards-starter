@@ -17,10 +17,17 @@ describe('Turn', () => {
     expect(turn).to.be.an.instanceof(Turn)
   });
 
-  it('should be instaniated with two arguments', () => {
+  it('should be instantiated with two arguments', () => {
     const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
     const turn = new Turn('forEach()', card);
-  })
+  });
+
+  it('should return the guess', () => {
+    const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
+    const turn = new Turn('forEach()', card);
+    turn.returnGuess();
+    expect(turn.guess).to.equal('forEach()');
+  });
 
 
 
