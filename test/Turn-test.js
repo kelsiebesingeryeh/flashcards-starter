@@ -49,6 +49,4 @@ describe('Turn', () => {
    turn.giveFeedback();
    expect(turn.giveFeedback()).to.equal('correct!' || 'incorrect!');
  });
-
-
 });
