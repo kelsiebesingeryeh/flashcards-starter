@@ -3,19 +3,18 @@ const Turn = require('./Turn');
 //outstanding questions:
 // 1. how do we get the currentCard to be the first card in the deck at the start of the round??
 // 2. review the takeTurn method and test assertions for that
-// 3. 
+// 3.
 
 class Round {
   constructor() {
     this.deck = new Deck();
     this.turns = 0;
-    this.currentCard = //current card?
     this.incorrectGuesses = [];
   }
 
   returnCurrentCard() {
     //method that return the current card being played.
-    return this.currentCard;
+    return
   }
 
   takeTurn() {

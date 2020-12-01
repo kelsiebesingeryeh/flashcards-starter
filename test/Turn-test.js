@@ -5,45 +5,47 @@ const Card = require('../src/Card')
 const Turn = require('../src/Turn')
 
 describe('Turn', () => {
+  let turn;
 
+  beforeEach( () => {
+    return turn = new Turn();
+  });
 
-  it('should be a function', () => {
-    const turn = new Turn();
+  it.skip('should be a function', () => {
     expect(Turn).to.be.a('function');
   });
 
-  it('should be an instance of Turn', () => {
-    const turn = new Turn();
+  it.skip('should be an instance of Turn', () => {
     expect(turn).to.be.an.instanceof(Turn)
   });
 
-  it('should be instantiated with two arguments', () => {
+  it.skip('should be instantiated with two arguments', () => {
     const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
     const turn = new Turn('forEach()', card);
   });
 
-  it('should return the guess', () => {
+  it.skip('should return the guess', () => {
     const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
     const turn = new Turn('forEach()', card);
     turn.returnGuess();
     expect(turn.guess).to.equal('forEach()');
   });
 
-  it('should return the card', () => {
+  it.skip('should return the card', () => {
     const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
     const turn = new Turn('forEach()', card);
     turn.returnCard();
     expect(turn.card).to.equal(card);
   });
 
-  it('should return a boolean if users guess matches the correct answer on the card', () => {
+  it.skip('should return a boolean if users guess matches the correct answer on the card', () => {
     const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
     const turn = new Turn('forEach()', card);
     turn.evaluateGuess();
     expect(turn.evaluateGuess()).to.be.a('boolean');
   });
 
- it('should give feedback on whether the guess is correct or not' , () => {
+ it.skip('should give feedback on whether the guess is correct or not' , () => {
    const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
    const turn = new Turn('forEach()', card);
    turn.giveFeedback();
