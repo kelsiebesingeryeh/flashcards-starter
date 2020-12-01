@@ -43,6 +43,12 @@ describe('Turn', () => {
     expect(turn.evaluateGuess()).to.be.a('boolean');
   });
 
+ it('should give feedback on whether the guess is correct or not' , () => {
+   const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
+   const turn = new Turn('forEach()', card);
+   turn.giveFeedback();
+   expect(turn.giveFeedback()).to.equal('correct!' || 'incorrect!');
+ });
 
 
 });

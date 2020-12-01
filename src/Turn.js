@@ -22,15 +22,13 @@ class Turn {
       }
   }
 
-  // giveFeedBack() {
-  //   if (this.evaluateGuess()) {
-  //       return `correct!`
-  //     } else {
-  //       return `incorrect!`
-  //     }
-  //   }
-  // }
-
-}
+  giveFeedback() {
+    if (this.evaluateGuess()) {
+        return `correct!`
+      } else {
+        return `incorrect!`
+      }
+    }
+  }
 
 module.exports = Turn;
