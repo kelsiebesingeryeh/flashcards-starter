@@ -7,28 +7,28 @@ class Turn {
   }
 
   returnGuess() {
-   return this.guess
+    return this.guess;
   }
 
   returnCard() {
-   return this.card
+    return this.card;
   }
 
   evaluateGuess() {
     if (this.card.correctAnswer === this.guess) {
-        return true;
-      } else {
-        return false;
-      }
+      return true;
+    } else {
+      return false;
+    }
   }
 
   giveFeedback() {
     if (this.evaluateGuess()) {
-        return `correct!`
-      } else {
-        return `incorrect!`
-      }
+      return `correct!`
+    } else {
+      return `incorrect!`
     }
   }
+}
 
 module.exports = Turn;
