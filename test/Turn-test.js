@@ -29,6 +29,20 @@ describe('Turn', () => {
     expect(turn.guess).to.equal('forEach()');
   });
 
+  it('should return the card', () => {
+    const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
+    const turn = new Turn('forEach()', card);
+    turn.returnCard();
+    expect(turn.card).to.equal(card);
+  });
+
+  it('should return a boolean if users guess matches the correct answer on the card', () => {
+    const card = new Card(21, 'Which iteration method is best for DOM manipulation?', ["forEach()", "map()", "reduce()"], 'forEach()');
+    const turn = new Turn('forEach()', card);
+    turn.evaluateGuess();
+    expect(turn.evaluateGuess()).to.be.a('boolean');
+  });
+
 
 
 });

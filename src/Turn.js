@@ -10,17 +10,17 @@ class Turn {
    return this.guess
   }
 
-  // returnCard() {
-  //  return this.card
-  // }
+  returnCard() {
+   return this.card
+  }
 
-  // evaluateGuess() {
-  //   if (this.card.correctAnswer === this.guess) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  // }
+  evaluateGuess() {
+    if (this.card.correctAnswer === this.guess) {
+        return true;
+      } else {
+        return false;
+      }
+  }
 
   // giveFeedBack() {
   //   if (this.evaluateGuess()) {
