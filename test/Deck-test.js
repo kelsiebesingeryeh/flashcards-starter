@@ -23,6 +23,6 @@ describe('Deck', () => {
     const card3 = new Card(6, 'What is an example of a mutator method?', ["sort()", "map()", "join()"], 'sort()');
     const deck = new Deck([card1, card2, card3]);
     deck.countCards();
-    expect(deck.countCards()).to.equal(3) //the length of the card
-  })
-})
+    expect(deck.countCards()).to.equal(3)
+  });
+});
