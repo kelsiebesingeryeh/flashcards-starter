@@ -15,11 +15,7 @@ class Turn {
   }
 
   evaluateGuess() {
-    if (this.card.correctAnswer === this.guess) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.card.correctAnswer === this.guess
   }
 
   giveFeedback() {
