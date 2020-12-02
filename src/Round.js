@@ -1,4 +1,5 @@
 const Turn = require('./Turn');
+const Deck = require('./Deck');
 
 //outstanding questions:
 // 1. how do we get the currentCard to be the first card in the deck at the start of the round??
@@ -10,23 +11,24 @@ class Round {
     this.deck = new Deck();
     this.turns = 0;
     this.incorrectGuesses = [];
+    this.currentCard = this.deck[0];
   }
 
   returnCurrentCard() {
-    //method that return the current card being played.
-    return
+    return this.currentCard;
   }
 
   takeTurn() {
-    const turn = new Turn(); //when a guess is made, create new Turn instance
+    const turn = new Turn();
     this.turns++;
-    this.returnCurrentCard(); //next card becomes the current card
-    turn.evaluateGuess(); // guess is evaluated/recorded. incorrect guesses will be stored via the id in an array of incorrect guesses
-    if (!turn.evaluateGuess()) {
-      this.incorrectGuess.push(turn.guess)
+    this.currentCard = this.deck[this.turns];
+    const isCorrectGuess = turn.evaluateGuess(); // guess is evaluated/recorded. incorrect guesses will be stored via the id in an array of incorrect guesses
+    if (!isCorrectGuess) {
+      this.incorrectGuesses.push(turn.guess)
     }
-    turn.giveFeedback();
+    // turn.giveFeedback();
     // feedback is returned regarding whether the guess is incorrect or correct.
+    return turn;
   }
   calculatePercentCorrect() {
     this.incorrectGuesses.length / this.turns;

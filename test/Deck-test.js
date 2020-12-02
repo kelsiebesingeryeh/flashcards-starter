@@ -9,18 +9,18 @@ describe('Deck', () => {
   let deck;
 
   beforeEach( () => {
-    return deck = new Deck();
+    deck = new Deck();
   });
 
-  it.skip('should be a function', () => {
+  it('should be a function', () => {
     expect(Deck).to.be.a('function');
   });
 
-  it.skip('should be an instance of Deck', () => {
+  it('should be an instance of Deck', () => {
     expect(deck).to.be.an.instanceof(Deck);
   });
 
-  it.skip('should count the cards in the deck', () => {
+  it('should count the cards in the deck', () => {
     const card1 = new Card(2, 'What is a comma-separated list of related values?', ["array", "object", "function"], "array");
     const card2 = new Card(4,'What type of prototype method does not modify the existing array but returns a particular representation of the array?', ["mutator method", "accessor method", "iteration method"], 'accessor method');
     const card3 = new Card(6, 'What is an example of a mutator method?', ["sort()", "map()", "join()"], 'sort()');
