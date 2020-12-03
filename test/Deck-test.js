@@ -9,10 +9,10 @@ describe('Deck', () => {
   let deck;
   let card1, card2, card3;
 
-  beforeEach( () => {
+  beforeEach(() => {
     deck = new Deck();
     card1 = new Card(2, 'What is a comma-separated list of related values?', ["array", "object", "function"], "array");
-    card2 = new Card(4,'What type of prototype method does not modify the existing array but returns a particular representation of the array?', ["mutator method", "accessor method", "iteration method"], 'accessor method');
+    card2 = new Card(4, 'What type of prototype method does not modify the existing array but returns a particular representation of the array?', ["mutator method", "accessor method", "iteration method"], 'accessor method');
     card3 = new Card(6, 'What is an example of a mutator method?', ["sort()", "map()", "join()"], 'sort()');
   });
 
