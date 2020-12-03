@@ -19,7 +19,8 @@ class Round {
     this.currentCard = this.deck.cards[this.turns];
     const isCorrectGuess = turn.evaluateGuess();
     if (!isCorrectGuess) {
-      this.incorrectGuesses.push(guess);
+      this.incorrectGuesses.push(this.currentCard.id);
+      console.log('guess',guess);
     }
     return turn.giveFeedback();
   };
