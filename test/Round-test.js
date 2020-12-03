@@ -31,7 +31,7 @@ describe('Round', () => {
     expect(round.returnCurrentCard()).to.deep.equal(card1);
   })
 
-  it('should update the turn count regardless if guess is correct or incorrect', () => {
+  it('should update the turn count after each guess', () => {
     round.takeTurn('pug');
     expect(round.turns).to.equal(1);
   });
