@@ -25,15 +25,18 @@ describe('Game', () => {
     expect(game).to.be.an.instanceof(Game);
   });
 
-  it('should create a new card in the deck', () => {
+  it('should create a new instance of a card when game starts', () => {
     game.start();
-    expect(game.currentRound.deck.cards[0]).to.equal(card1);
+    expect(game.currentRound.deck.cards[0]).to.be.an.instanceof(Card);
   });
 
-  it('should contain a deck', () => {
+  it('should have a deck when game starts', () => {
     game.start();
     expect(game.currentRound.deck).to.be.an.instanceof(Deck);
   });
 
-
-})
+  it('should create a new instance of a round when game starts', () => {
+    game.start();
+    expect(game.currentRound).to.be.an.instanceof(Round);
+  });
+});
