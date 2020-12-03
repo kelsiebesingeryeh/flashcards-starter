@@ -27,9 +27,13 @@ describe('Round', () => {
     expect(round).to.be.an.instanceof(Round);
   });
 
+  it('should start with the first card in the deck', () => {
+    expect(round.currentCard).to.be.equal(card1);
+  });
+
   it('should return current card being played', () => {
     expect(round.returnCurrentCard()).to.deep.equal(card1);
-  })
+  });
 
   it('should update the turn count after each guess', () => {
     round.takeTurn('pug');
@@ -43,27 +47,26 @@ describe('Round', () => {
 
   it('should add incorrect guesses to an array', () => {
     round.takeTurn('pug');
-    expect(round.incorrectGuesses).to.deep.equal(['pug']);
+    expect(round.incorrectGuesses.length).to.deep.equal(1);
   });
 
   it('should return feedback on the guess', () => {
     expect(round.takeTurn('sea otter')).to.equal('correct!');
-  })
+  });
 
   it('should return feedback on the guess', () => {
     expect(round.takeTurn('pug')).to.equal('incorrect!');
-  })
+  });
 
   it('should calculate the percentage of correct guesses', () => {
     round.takeTurn('pug');
     round.takeTurn('gallbladder');
-    expect(round.calculatePercentCorrect()).to.equal(50)
-  })
+    expect(round.calculatePercentCorrect()).to.equal(50);
+  });
 
-  it('should print a message when the round is over', () => {
+  it('should end the round', () => {
     round.takeTurn('pug');
     round.takeTurn('gallbladder');
-    expect(round.endRound()).to.equal('** Round over! ** You answered 50% of the questions correctly!')
-  })
-
-})
+    expect(round.endRound()).to.equal('** Round over! ** You answered 50% of the questions correctly!');
+  });
+});
