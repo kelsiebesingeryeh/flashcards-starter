@@ -25,5 +25,15 @@ describe('Game', () => {
     expect(game).to.be.an.instanceof(Game);
   });
 
+  it('should create a new card in the deck', () => {
+    game.start();
+    expect(game.currentRound.deck.cards[0]).to.equal(card1);
+  });
+
+  it('should contain a deck', () => {
+    game.start();
+    expect(game.currentRound.deck).to.be.an.instanceof(Deck);
+  });
+
 
 })
