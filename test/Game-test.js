@@ -13,7 +13,7 @@ const Game = require('../src/Game');
 describe('Game', () => {
   let game;
 
-  beforeEach( () => {
+  beforeEach(() => {
     game = new Game();
   });
 

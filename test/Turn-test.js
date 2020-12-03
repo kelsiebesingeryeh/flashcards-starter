@@ -8,7 +8,7 @@ describe('Turn', () => {
   let turn;
   let card;
 
-  beforeEach( () => {
+  beforeEach(() => {
     turn = new Turn('Alaska', card);
     card = new Card(5, 'What is the largest state in the United States?', ['Alaska', 'Texas', 'California'], 'Alaska');
   });
@@ -38,10 +38,10 @@ describe('Turn', () => {
     expect(turn2.evaluateGuess()).to.be.false;
   });
 
- it('should give feedback on whether the guess is correct or not' , () => {
-   const turn1 = new Turn('Alaska', card);
-   const turn2 = new Turn('Texas', card);
-   expect(turn1.giveFeedback()).to.equal('correct!');
-   expect(turn2.giveFeedback()).to.equal('incorrect!');
- });
+  it('should give feedback on whether the guess is correct or not', () => {
+    const turn1 = new Turn('Alaska', card);
+    const turn2 = new Turn('Texas', card);
+    expect(turn1.giveFeedback()).to.equal('correct!');
+    expect(turn2.giveFeedback()).to.equal('incorrect!');
+  });
 });
