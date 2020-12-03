@@ -30,24 +30,20 @@ describe('Turn', () => {
   it('should return the guess', () => {
     const card = new Card(5, 'What is the largest state in the United States?', ['Alaska', 'Texas', 'California'], 'Alaska');
     const turn = new Turn('Alaska', card);
-    turn.returnGuess();
     expect(turn.returnGuess()).to.equal('Alaska');
   });
 
   it('should return the card', () => {
     const card = new Card(5, 'What is the largest state in the United States?', ['Alaska', 'Texas', 'California'], 'Alaska');
     const turn = new Turn('Alaska', card);
-    turn.returnCard();
     expect(turn.returnCard()).to.equal(card);
   });
 
   it('should return a boolean if users guess matches the correct answer on the card', () => {
-    turn.evaluateGuess();
     expect(turn.evaluateGuess()).to.be.a('boolean');
   });
 
  it('should give feedback on whether the guess is correct or not' , () => {
-   turn.giveFeedback();
    expect(turn.giveFeedback()).to.equal('correct!' || 'incorrect!');
  });
 });
