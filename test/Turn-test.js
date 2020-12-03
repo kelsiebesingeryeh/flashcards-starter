@@ -1,8 +1,8 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Turn = require('../src/Turn')
-const Card = require('../src/Card')
+const Turn = require('../src/Turn');
+const Card = require('../src/Card');
 
 describe('Turn', () => {
   let turn;
@@ -18,18 +18,10 @@ describe('Turn', () => {
   });
 
   it('should be an instance of Turn', () => {
-    expect(turn).to.be.an.instanceof(Turn)
-  });
-
-  it('should be instantiated with two arguments', () => {
-    const card = new Card(5, 'What is the largest state in the United States?', ['Alaska', 'Texas', 'California'], 'Alaska');
-    const turn = new Turn('Alaska', card);
-    expect(turn.returnGuess()).to.equal('Alaska')
+    expect(turn).to.be.an.instanceof(Turn);
   });
 
   it('should return the guess', () => {
-    const card = new Card(5, 'What is the largest state in the United States?', ['Alaska', 'Texas', 'California'], 'Alaska');
-    const turn = new Turn('Alaska', card);
     expect(turn.returnGuess()).to.equal('Alaska');
   });
 
@@ -39,11 +31,17 @@ describe('Turn', () => {
     expect(turn.returnCard()).to.equal(card);
   });
 
-  it('should return a boolean if users guess matches the correct answer on the card', () => {
-    expect(turn.evaluateGuess()).to.be.a('boolean');
+  it('should return if a users guess matches the correct answer on the card', () => {
+    const turn1 = new Turn('Alaska', card);
+    const turn2 = new Turn('Texas', card);
+    expect(turn1.evaluateGuess()).to.be.true;
+    expect(turn2.evaluateGuess()).to.be.false;
   });
 
  it('should give feedback on whether the guess is correct or not' , () => {
-   expect(turn.giveFeedback()).to.equal('correct!' || 'incorrect!');
+   const turn1 = new Turn('Alaska', card);
+   const turn2 = new Turn('Texas', card);
+   expect(turn1.giveFeedback()).to.equal('correct!');
+   expect(turn2.giveFeedback()).to.equal('incorrect!');
  });
 });
