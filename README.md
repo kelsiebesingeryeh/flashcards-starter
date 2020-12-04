@@ -14,10 +14,11 @@ Flashcards is our first Mod 2 solo project for the Turing School of Software and
 The spec for this project can be found [here](https://frontend.turing.io/projects/flash-cards.html).
 
 ## Prerequisites
-1. Cloned the repo down 
-2. Run npm install 
-3. In ther terminal, run node index.js
-4. Play the game!
+1. Fork repo
+2. Cloned the repo down 
+3. Run npm install 
+4. In the terminal, run node index.js via the command line
+5. Play the game!
 
 ### Using the App
 
