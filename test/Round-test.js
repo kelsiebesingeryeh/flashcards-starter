@@ -52,9 +52,6 @@ describe('Round', () => {
 
   it('should return feedback on the guess', () => {
     expect(round.takeTurn('sea otter')).to.equal('correct!');
-  });
-
-  it('should return feedback on the guess', () => {
     expect(round.takeTurn('pug')).to.equal('incorrect!');
   });
 
